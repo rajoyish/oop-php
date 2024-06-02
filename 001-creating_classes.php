@@ -1,11 +1,19 @@
 <?php
 class Product
 {
+    public $name = 'soap';
+    public $price = 5;
 
 }
 
-$product = new Product();
-var_dump($product);
+$soapObject = new Product();
+print $soapObject->name . "\n";
 
-$anotherProduct = new Product();
-var_dump($anotherProduct);
+$soapObject->name = 'toothpaste';
+print $soapObject->name . "\n";
+
+$priceObject = new Product();
+print $priceObject->price . "\n";
+
+$priceObject->price = '10';
+print $priceObject->price . "\n";
