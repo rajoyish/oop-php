@@ -1,19 +1,23 @@
 <?php
+
 class Product
 {
     public $name = 'soap';
-    public $price = 5;
+    public $price;
 
+    public function priceAsCurrency()
+    {
+        $priceAsCurrency = $this->price / 100;
+
+        return $priceAsCurrency;
+    }
 }
 
 $soapObject = new Product();
-print $soapObject->name . "\n";
+$soapObject->price = 550;
+$priceAsCurrency = $soapObject->priceAsCurrency();
 
-$soapObject->name = 'toothpaste';
-print $soapObject->name . "\n";
-
-$priceObject = new Product();
-print $priceObject->price . "\n";
-
-$priceObject->price = '10';
-print $priceObject->price . "\n";
+$soapObjectTwo = new Product();
+$soapObjectTwo->price = 650;
+$priceAsCurrency = $soapObjectTwo->priceAsCurrency();
+var_dump($priceAsCurrency).PHP_EOL;
