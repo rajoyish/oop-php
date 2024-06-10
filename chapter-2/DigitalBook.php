@@ -1,26 +1,23 @@
 <?php
 
-class Book
+class DigitalBook
 {
+
     public $title;
     public $author;
     public $price;
-    public $weight;
     public $fileSize;
-    public $type;
 
     public function __construct(
         string $title,
         string $author,
         int $price,
-        int $weight = 0,
         int $fileSize = 0,
-        string $type
     ) {
         $this->title = $title;
         $this->author = $author;
         $this->price = $price;
-        $this->type = $type;
+        $this->fileSize = $fileSize;
     }
 
     public function getTitle(): string
@@ -38,15 +35,19 @@ class Book
         return $this->price;
     }
 
-
-    public function getWeight(): int
+    public function getPriceAsCurrency(): float
     {
-        return $this->weight;
+        return $this->price / 100;
     }
 
     public function getFileSize(): int
     {
         return $this->fileSize;
+    }
+
+    public function print()
+    {
+        return "{$this->title}, {$this->author}, {$this->price}, file-size: {$this->fileSize}";
     }
 
 

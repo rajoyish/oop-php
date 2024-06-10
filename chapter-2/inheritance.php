@@ -1,8 +1,9 @@
 <?php
-require_once 'Book.php';
+require_once 'PhysicalBook.php';
+require_once 'DigitalBook.php';
 
-$physicalBook = new Book('A Random Book', 'Jane Doe', 2000);
-$digitalBook = new Book('A Random Book', 'Jane Doe', 2000);
+$physicalBook = new PhysicalBook('A Random Book', 'Jane Doe', 2000, 300);
+$digitalBook = new DigitalBook('A Random Book', 'Jane Doe', 2000, 1048);
 
-print $physicalBook->title . PHP_EOL;
-print $digitalBook->title . PHP_EOL;
+print $physicalBook->getPriceAsCurrency() . PHP_EOL;
+print $digitalBook->getPriceAsCurrency() . PHP_EOL;
