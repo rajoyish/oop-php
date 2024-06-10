@@ -2,9 +2,9 @@
 
 class Playlist
 {
-    public $songs = [];
+    public array $songs = [];
 
-    public function addSong(Song $song)
+    public function addSong(Song $song): void
     {
         $this->songs[] = $song;
     }
