@@ -2,8 +2,7 @@
 require_once 'PhysicalBook.php';
 require_once 'DigitalBook.php';
 
-$physicalBook = new PhysicalBook('A Random Book', 'Jane Doe', 2000, 300);
-$digitalBook = new DigitalBook('A Random Book', 'Jane Doe', 2000, 1048);
+$physicalBook = new PhysicalBook('A Random Book', 'Jane Doe', 2000);
+$physicalBook->price = 500;
 
-print $physicalBook->getPriceAsCurrency() . PHP_EOL;
-print $digitalBook->getPriceAsCurrency() . PHP_EOL;
+print $physicalBook->getPrice() . PHP_EOL;
