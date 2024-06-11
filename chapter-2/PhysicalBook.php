@@ -19,7 +19,7 @@ class PhysicalBook extends Book
 
   public function print(): string
   {
-    return "{$this->title}, {$this->author}, {$this->price} kg";
+    return "{$this->title}, {$this->author}, {$this->price} gm";
   }
 
 

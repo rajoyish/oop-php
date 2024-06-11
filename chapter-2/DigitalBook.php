@@ -17,10 +17,10 @@ class DigitalBook extends Book
     return $this->fileSize;
   }
 
-  public function print()
-  {
-    return "{$this->title}, {$this->author}, {$this->price}, file-size: {$this->fileSize}";
-  }
+//  public function print()
+//  {
+//    return "{$this->title}, {$this->author}, {$this->price}, file-size: {$this->fileSize}";
+//  }
 
 
 }
