@@ -14,3 +14,5 @@ $subObject = new SubClass();
 //print $baseObject->privateProperty . PHP_EOL; // NOT accessible
 //print $baseObject->getPrivateProperty() . PHP_EOL;
 //print $subObject->getParentPrivateProperty() . PHP_EOL;
+
+print  $subObject->getParentProtectedProperty() . PHP_EOL;

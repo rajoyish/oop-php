@@ -9,14 +9,14 @@ class or from a subclass';
 
   private $privateProperty = 'Private properties and methods can only be accessed within the declaring class. They are not visible anywhere else';
 
-  public function getProtectedProperty(): string
-  {
-    return $this->protectedProperty;
-  }
-
   public function getPrivateProperty(): string
   {
     return $this->privateProperty;
+  }
+
+  protected function getProtectedProperty(): string
+  {
+    return $this->protectedProperty;
   }
 
 }
