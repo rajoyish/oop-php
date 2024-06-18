@@ -1,16 +1,16 @@
 <?php
 
-class Playlist
+class Playlist implements SongHolder
 {
   private array $songs = [];
-
-  public function addSong(Song $song): void
-  {
-    $this->songs[] = $song;
-  }
 
   public function getSongs(): array
   {
     return $this->songs;
+  }
+
+  public function addSong(Song $song): void
+  {
+    $this->songs[] = $song;
   }
 }
