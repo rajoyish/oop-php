@@ -1,7 +1,10 @@
 <?php
+require_once 'Printable.php';
 
 class Connection
 {
+  use Printable;
+
   private static int $count = 0;
 
   public function __construct()
