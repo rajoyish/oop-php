@@ -7,8 +7,14 @@ trait IdentifiableTrait
     return bin2hex(random_bytes(5));
   }
 
-  public function getId(): string
+  public function printIdentity(): void
   {
-    return 'ID return from the trait';
+    print $this->getId() . ' : ' . $this->getName() . PHP_EOL;
   }
+
+  abstract public function getId(): int;
+
+  abstract public function getName(): string;
+
+
 }
