@@ -1,19 +1,10 @@
 <?php
-require_once 'Identifiable.php';
-require_once 'IdentifiableTrait.php';
-require_once 'IdentifiableTraitImposter.php';
+require_once 'Model.php';
 
-class Song implements Identifiable
+class Song extends Model
 {
-  use IdentifiableTrait;
-  use IdentifiableTraitImposter {
-    IdentifiableTraitImposter::getHexId insteadof IdentifiableTrait;
-    IdentifiableTrait::getHexId as getOriginalHexId;
-    IdentifiableTrait::getId as getTraitId;
-  }
-
-  public function getId(): string
+  public function getGroup()
   {
-    return 'ID return from the class';
+    return 'streamable';
   }
 }
