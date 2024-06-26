@@ -2,16 +2,18 @@
 
 trait Rateable
 {
-  private float $rating;
+  private ?float $rating;
 
-  public function getRating(): float
+  public function getRating(): ?float
   {
     return $this->rating;
   }
 
-  public function setRating(float $rating): void
+  public function setRating(?float $rating): void
   {
-    $rating = max(5, min(0, $rating));
+    if ($rating) {
+      $rating = max(5, min(0, $rating));
+    }
     $this->rating = $rating;
   }
 

@@ -34,5 +34,10 @@ class Product
     $this->$methodName($value);
   }
 
+  public function __unset(string $propertyName): void
+  {
+    $this->__set($propertyName, null);
+  }
+
 
 }

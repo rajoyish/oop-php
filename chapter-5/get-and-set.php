@@ -11,3 +11,6 @@ try {
 } catch (BadMethodCallException $exception) {
   print $exception->getMessage() . PHP_EOL;
 }
+
+unset($product->rating);
+print 'Rating: ' . $product->rating . PHP_EOL;
