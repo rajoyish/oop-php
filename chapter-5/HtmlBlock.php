@@ -6,6 +6,11 @@ abstract class HtmlBlock
   {
   }
 
+  public function __destruct()
+  {
+    echo get_called_class() . ' : __destruct called' . PHP_EOL;
+  }
+
   public function __toString(): string
   {
     return static::getOpeningTag() . $this->content . static::getClosingTag();
