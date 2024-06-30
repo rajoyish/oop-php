@@ -1,6 +1,6 @@
 <?php
 
-namespace Mysql;
+namespace MySQL;
 
 class  Connection
 {

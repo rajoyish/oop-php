@@ -1,9 +1,13 @@
 <?php
+require_once 'MySQL/Connection.php';
+require_once 'Postgres/Connection.php';
 
-use MySql\Connection;
+use MySQL\Connection as MySQLConnection;
+use Postgres\Connection as PostgresConnection;
 
-require_once 'mysql-connection.php';
-require_once 'postgresql-connection.php';
 
-$mysqlConnection = new Connection();
+$mysqlConnection = new MySQLConnection();
 print $mysqlConnection->connect() . PHP_EOL;
+
+$postgresqlConnection = new PostgresConnection();
+print $postgresqlConnection->connect() . PHP_EOL;

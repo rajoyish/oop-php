@@ -1,6 +1,6 @@
 <?php
 
-namespace postgresql;
+namespace Postgres;
 
 class Connection
 {
