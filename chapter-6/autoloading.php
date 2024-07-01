@@ -1,10 +1,10 @@
 <?php
-$simpleAutoload = function (string $className) {
-  if (file_exists("{$className}.php")) {
-    require_once "{$className}.php";
-  }
-};
-spl_autoload_register($simpleAutoload);
+require_once 'autoload.php';
+
+use Utility\Chart;
 
 $chart = new Chart();
 print $chart->draw() . PHP_EOL;
+
+$connection = new Postgres\Connection();
+print $connection->connect() . PHP_EOL;
