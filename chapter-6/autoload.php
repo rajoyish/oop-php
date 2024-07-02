@@ -1,4 +1,5 @@
 <?php
+
 //$simpleAutoload = function (string $className) {
 //  $className = str_replace('\\', DIRECTORY_SEPARATOR, $className);
 //

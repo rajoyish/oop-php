@@ -2,12 +2,12 @@
 
 namespace MySQL;
 
-class  Connection
+class Connection
 {
-  private string $dsn = "mysql:dsn";
+    private string $dsn = 'mysql:dsn';
 
-  public function connect(): string
-  {
-    return 'Connecting to ' . $this->dsn;
-  }
+    public function connect(): string
+    {
+        return 'Connecting to '.$this->dsn;
+    }
 }
