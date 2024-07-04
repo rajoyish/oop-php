@@ -1,0 +1,15 @@
+Class name: App\Admin
+Parent class name: App\User
+Interface names: App\AuthenticateUserInterface
+Trait names: 
+Trait aliases: 
+Static properties: 
+Default properties: 
+Is Cloneable
+Is Instantiable
+Not internal
+File name: /Users/rajoyish/Sites/oop-php/chapter-6/src/Admin.php
+Start line: 5
+End line: 5
+Length: 1
+Short name: Admin
