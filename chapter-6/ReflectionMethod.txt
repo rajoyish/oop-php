@@ -1,0 +1,35 @@
+Parent class short name: User
+
+Parent class methods: 
+
+Method name: __construct
+Method start line: 7
+Method end line: 7
+Method length: 1
+Method is public
+Method parameters: 
+0: int id
+1: string name
+----------------------------------------------------
+Method name: getId
+Method start line: 9
+Method end line: 12
+Method length: 4
+Method is public
+Method parameters: 
+----------------------------------------------------
+Method name: getName
+Method start line: 14
+Method end line: 17
+Method length: 4
+Method is public
+Method parameters: 
+----------------------------------------------------
+Method name: setPassword
+Method start line: 19
+Method end line: 22
+Method length: 4
+Method is private
+Method parameters: 
+0: string password
+----------------------------------------------------
