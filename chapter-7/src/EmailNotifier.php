@@ -2,7 +2,7 @@
 
 namespace App;
 
-class EmailNotifier
+class EmailNotifier implements NotifierInterface
 {
     public function send($to)
     {
