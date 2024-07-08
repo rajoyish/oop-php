@@ -8,12 +8,11 @@ class Song
         public string $title,
         public string $artist,
         public int $duration,
-        private SongDataWriter $writer
     ) {}
 
-    public function write(): string
+    public function write(SongWriterInterface $writer): string
     {
-        return $this->writer->write($this);
+        return $writer->write($this);
     }
 
     public function getDurationInMinutes(): string
