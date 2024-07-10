@@ -2,19 +2,47 @@
 
 namespace App;
 
+use PDO;
+use PDOException;
+
 class Connection
 {
+    private const OPTIONS = [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+    ];
+
     private static $instance = null;
 
-    private function __construct() {}
+    private PDO $pdo;
+
+    private string $host = '127.0.0.1';
+
+    private string $dbname = 'playlist-demo';
+
+    private string $charset = 'utf8mb4';
+
+    private function __construct()
+    {
+        $dsn = "mysql:host={$this->host};dbname={$this->dbname};charset={$this->charset}";
+        try {
+            $this->pdo = new PDO($dsn, 'root', '', self::OPTIONS);
+        } catch (PDOException $exception) {
+            throw new PDOException($exception->getMessage(), (int) $exception->getCode());
+        }
+    }
 
     public static function getInstance(): self
     {
         if (self::$instance === null) {
-            echo 'Creating instance...'.PHP_EOL;
             self::$instance = new self();
         }
 
         return self::$instance;
+    }
+
+    public function getPdo(): ?PDO
+    {
+        return $this->pdo;
     }
 }
