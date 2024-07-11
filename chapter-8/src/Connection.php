@@ -18,7 +18,7 @@ class Connection
 
     private string $host = '127.0.0.1';
 
-    private string $dbname = 'playlist-demo';
+    private string $dbname = 'playlist_db';
 
     private string $charset = 'utf8mb4';
 
