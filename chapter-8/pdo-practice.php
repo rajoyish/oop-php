@@ -8,18 +8,33 @@ $connection = Connection::getInstance();
 
 $pdo = $connection->getPdo();
 
-//$stmt = $pdo->query('SELECT * FROM playlist');
-//while ($row = $stmt->fetch()) {
-//    echo $row['name'].PHP_EOL;
-//}
+$stmt = $pdo->prepare('INSERT INTO playlist(name,category) VALUES(:name,:category)');
+$stmt->execute(['name' => 'Beach Party', 'category' => 'Dance']);
+$inserted = $stmt->rowCount();
+dump($inserted);
 
-$stmt = $pdo->prepare('SELECT * FROM playlist WHERE name LIKE ?');
-$stmt->execute(['%Summer%']);
-//$playlist = $stmt->fetch(PDO::FETCH_BOTH);
-$playlist = $stmt->fetch(PDO::FETCH_OBJ);
-dump($playlist);
+$sql = 'UPDATE playlist SET name = :name WHERE id = :id';
+$pdo->prepare($sql)->execute([
+    'name' => 'Total 80s Power Ballads',
+    'id' => 1,
+]);
 
-$stmtTwo = $pdo->prepare('SELECT * FROM playlist WHERE name LIKE :p_name AND category = :category');
-$stmtTwo->execute(['p_name' => '%Workout%', 'category' => 'Electronic']);
-$playlistTwo = $stmtTwo->fetch();
-dump($playlistTwo);
+$stmtIII = $pdo->query('SELECT name from playlist');
+foreach ($stmtIII as $row) {
+    echo $row['name'].PHP_EOL;
+}
+
+$stmtIV = $pdo->prepare('SELECT name FROM playlist WHERE id = :id');
+$stmtIV->execute(['id' => 1]);
+$name = $stmtIV->fetchColumn();
+dump($name);
+
+$count = $pdo->query('SELECT COUNT(*) FROM playlist')->fetchColumn();
+dump($count);
+
+$playlists = $pdo->query('SELECT * FROM playlist')
+    ->fetchAll();
+
+foreach ($playlists as $playlist) {
+    dump($playlist['name']);
+}
