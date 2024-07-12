@@ -1,8 +1,8 @@
 {
   "require": {
-    "doctrine/orm": "^2.10.2",
-    "doctrine/dbal": "^3.1.1",
-    "symfony/cache": "^5.3",
+    "doctrine/orm": "^3.2.1",
+    "doctrine/dbal": "^4.0.4",
+    "symfony/cache": "^7.1.2",
     "ext-pdo": "*"
   },
   "require-dev": {
