@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity]
@@ -18,6 +19,15 @@ class Playlist
 
     #[ORM\Column(type: 'string')]
     private ?string $category;
+
+    #[ORM\ManyToMany(targetEntity: 'Song', inversedBy: 'playlists')]
+    #[ORM\JoinTable(name: 'playlist_song')]
+    private $songs;
+
+    public function __construct()
+    {
+        $this->songs = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
