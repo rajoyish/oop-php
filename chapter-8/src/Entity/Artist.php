@@ -16,6 +16,9 @@ class Artist
     #[ORM\Column(type: 'string')]
     private ?string $name;
 
+    #[ORM\OneToMany(mappedBy: 'artist', targetEntity: 'Song')]
+    private $songs;
+
     public function getId(): ?int
     {
         return $this->id;

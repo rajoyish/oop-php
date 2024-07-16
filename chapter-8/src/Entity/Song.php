@@ -19,6 +19,9 @@ class Song
     #[ORM\Column(name: 'file_location', type: 'string')]
     private ?string $fileLocation;
 
+    #[ORM\ManyToOne(targetEntity: 'Artist', inversedBy: 'songs')]
+    private ?Artist $artist;
+
     public function getId(): ?int
     {
         return $this->id;
