@@ -20,3 +20,10 @@ $sales->manager = $manager;
 
 $ser = serialize($sales);
 dump($ser);
+
+$unSer = unserialize($ser);
+$unSer->manager->name = 'Anu G';
+dump($sales, $unSer);
+
+$deepCopy = unserialize(serialize($sales));
+dump($deepCopy, $deepCopy === $sales);
