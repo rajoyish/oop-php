@@ -2,7 +2,7 @@
 
 require_once 'vendor/autoload.php';
 
-class MappedIteratorDemo implements Iterator
+class MappedIteratorDemo implements Countable, Iterator
 {
     public function __construct(private array $items = []) {}
 
@@ -30,6 +30,11 @@ class MappedIteratorDemo implements Iterator
     {
         reset($this->items);
     }
+
+    public function count(): int
+    {
+        return count($this->items);
+    }
 }
 
 $mappedArray = [
@@ -42,3 +47,5 @@ $mappedIteratorDemo = new MappedIteratorDemo($mappedArray);
 foreach ($mappedIteratorDemo as $item => $value) {
     echo "$item: $value".PHP_EOL;
 }
+
+echo count($mappedIteratorDemo).PHP_EOL;
