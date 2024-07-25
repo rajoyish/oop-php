@@ -5,6 +5,16 @@ use PHPUnit\Framework\TestCase;
 
 class CartTest extends TestCase
 {
+    /** @test */
+    public function the_cart_tax_value_can_be_changed_statically(): void
+    {
+        Cart::$tax = 1.5;
+        $cart = new Cart;
+        $cart->price = 10;
+
+        $this->assertEquals(15, $cart->getNetPrice());
+    }
+
     public function testCorrectNetPriceIsReturned(): void
     {
         $cart = new Cart;
@@ -14,13 +24,8 @@ class CartTest extends TestCase
         $this->assertEquals(12, $netPrice);
     }
 
-    /** @test */
-    public function the_cart_tax_value_can_be_changed_statically(): void
+    protected function setUp(): void
     {
-        Cart::$tax = 1.5;
-        $cart = new Cart;
-        $cart->price = 10;
-
-        $this->assertEquals(15, $cart->getNetPrice());
+        Cart::$tax = 1.2;
     }
 }
