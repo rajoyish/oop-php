@@ -24,6 +24,16 @@ class CartTest extends TestCase
         $this->assertEquals(12, $netPrice);
     }
 
+    public function testWrongTypeThrowsAnError(): void
+    {
+        $cart = new Cart;
+        $cart->price = 10;
+        $this->expectException(TypeError::class);
+        $this->expectExceptionMessage('must be of type int|float');
+
+        $cart->addToPrice('ten');
+    }
+
     protected function setUp(): void
     {
         Cart::$tax = 1.2;
