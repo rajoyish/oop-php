@@ -7,7 +7,7 @@ class Account
     // TODO: account number property
     private int $accountNumber;
 
-    private User $user;
+    private User $accountHolder;
 
     public function getAccountNumber(): int
     {
@@ -21,13 +21,13 @@ class Account
         $this->accountNumber = $accountNumber;
     }
 
-    public function getUser(): User
+    public function getAccountHolder(): User
     {
-        return $this->user;
+        return $this->accountHolder;
     }
 
-    public function setUser(User $user): void
+    public function setAccountHolder(User $accountHolder): void
     {
-        $this->user = $user;
+        $this->accountHolder = $accountHolder;
     }
 }

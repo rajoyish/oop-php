@@ -26,13 +26,13 @@ class AccountTest extends TestCase
     {
         // setup
         $account = new Account;
-        $user = new User;
+        $accountHolder = new User;
 
         // do something
-        $account->setUser($user);
+        $account->setAccountHolder($accountHolder);
 
         // make assertion
-        $this->assertSame($user, $account->getUser());
+        $this->assertSame($accountHolder, $account->getAccountHolder());
 
     }
 }
