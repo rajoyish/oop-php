@@ -13,7 +13,7 @@ class Account
         return $this->accountNumber;
     }
 
-    public function setAccountNumber($accountNumber)
+    public function setAccountNumber(int $accountNumber)
     {
         // TODO: set a real account number
         $this->accountNumber = $accountNumber;
