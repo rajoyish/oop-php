@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use App\Account;
+use App\User;
 use PHPUnit\Framework\TestCase;
 
 class AccountTest extends TestCase
@@ -18,5 +19,20 @@ class AccountTest extends TestCase
 
         // make assertion
         $this->assertSame(12345, $account->getAccountNumber());
+    }
+
+    /** @test */
+    public function an_account_can_be_related_to_a_user(): void
+    {
+        // setup
+        $account = new Account;
+        $user = new User;
+
+        // do something
+        $account->setUser($user);
+
+        // make assertion
+        $this->assertSame($user, $account->getUser());
+
     }
 }
