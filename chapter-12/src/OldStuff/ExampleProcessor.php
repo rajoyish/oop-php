@@ -1,10 +1,13 @@
 <?php
 
+// src/OldStuff/ExampleProcessor.php
+
 namespace App\OldStuff;
 
+use App\Service;
 use Exception;
 
-class ExampleProcessor
+class ExampleProcessor implements Service
 {
     private FileWriter $fileWriter;
 
@@ -20,6 +23,7 @@ class ExampleProcessor
         if (! $result) {
             throw new Exception('Error writing to file');
         }
+
         // Continue processing
         echo 'Continue processing...'.PHP_EOL;
 

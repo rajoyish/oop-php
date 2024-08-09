@@ -1,8 +1,12 @@
 <?php
 
+// src/OldStuff/FileWriter.php
+
 namespace App\OldStuff;
 
-abstract class FileWriter
+use App\Service;
+
+abstract class FileWriter implements Service
 {
     abstract public function writeToFile($data): bool;
 }
