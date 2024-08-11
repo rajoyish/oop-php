@@ -2,7 +2,7 @@
 
 namespace App\DTO;
 
-class UserRegistration
+readonly class UserRegistration
 {
     public function __construct(
         public string $username,
