@@ -1,9 +1,13 @@
 <?php
 
 use App\DTO\UserRegistration;
+use App\Validation\Validator;
 
 require_once 'vendor/autoload.php';
 
-$userRegistration = new UserRegistration('Rajesh', 'rajesh@mail.com');
-$userRegistration->email = 'info@example.com';
-dump($userRegistration);
+$userRegistration = new UserRegistration('', 'not-an-email');
+
+$validator = new Validator;
+$validator->validate($userRegistration);
+
+$errors = $validator->getErrors();
