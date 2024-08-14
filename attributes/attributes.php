@@ -10,4 +10,4 @@ $userRegistration = new UserRegistration('', 'not-an-email');
 $validator = new Validator;
 $validator->validate($userRegistration);
 
-$errors = $validator->getErrors();
+//$errors = $validator->getErrors();
