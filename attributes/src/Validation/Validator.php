@@ -38,6 +38,10 @@ class Validator
             }
 
         }
-        dd($this->errors);
+    }
+
+    public function getErrors(): array
+    {
+        return $this->errors;
     }
 }
