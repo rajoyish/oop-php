@@ -2,6 +2,7 @@
 
 namespace App\DTO;
 
+use App\Validation\Rules\Email;
 use App\Validation\Rules\Required;
 
 readonly class UserRegistration
@@ -10,7 +11,7 @@ readonly class UserRegistration
         #[Required]
         public string $username,
 
-        #[Required]
+        #[Required, Email]
         public string $email
     ) {}
 }
