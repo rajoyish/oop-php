@@ -40,7 +40,8 @@ class Validator
                 }
 
             }
-            dd($this->errors);
+
         }
+        dd($this->errors);
     }
 }

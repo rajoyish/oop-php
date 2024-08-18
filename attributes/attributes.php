@@ -5,7 +5,7 @@ use App\Validation\Validator;
 
 require_once 'vendor/autoload.php';
 
-$userRegistration = new UserRegistration('', '');
+$userRegistration = new UserRegistration('', 'rajesh@huesarrays.com');
 
 $validator = new Validator;
 
