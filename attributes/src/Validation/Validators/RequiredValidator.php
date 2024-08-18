@@ -8,4 +8,9 @@ class RequiredValidator implements ValidatorInterface
     {
         return ! empty($value);
     }
+
+    public function getMessage(string $name): string
+    {
+        return $name.' is a required value';
+    }
 }
