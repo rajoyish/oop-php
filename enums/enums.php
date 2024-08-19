@@ -20,7 +20,5 @@ class Response
     }
 }
 
-$response = new Response('Some content', HttpStatusCode::Ok, []);
-dump($response);
-
-echo $response->getStatusCodeValue().PHP_EOL;
+$statusCode = HttpStatusCode::LargeHeaders;
+echo $statusCode->message().PHP_EOL;
