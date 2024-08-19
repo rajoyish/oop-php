@@ -20,12 +20,17 @@ class Response
     }
 }
 
-$cases = HttpStatusCode::cases();
-dump($cases);
+//$cases = HttpStatusCode::cases();
+//dump($cases);
+//
+//$code1 = HttpStatusCode::Ok;
+//$code2 = HttpStatusCode::BadRequest;
+//$code3 = HttpStatusCode::Ok;
+//
+//dump($code1 === $code2); // false
+//dump($code1 === $code3); // true
 
-$code1 = HttpStatusCode::Ok;
-$code2 = HttpStatusCode::BadRequest;
-$code3 = HttpStatusCode::Ok;
-
-dump($code1 === $code2); // false
-dump($code1 === $code3); // true
+//$code = HttpStatusCode::from(201);
+//$code = HttpStatusCode::from(222);
+$code = HttpStatusCode::tryFrom(222); // null
+dump($code, gettype($code));
