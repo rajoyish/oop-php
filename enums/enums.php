@@ -20,5 +20,12 @@ class Response
     }
 }
 
-$statusCode = HttpStatusCode::LargeHeaders;
-echo $statusCode->message().PHP_EOL;
+$cases = HttpStatusCode::cases();
+dump($cases);
+
+$code1 = HttpStatusCode::Ok;
+$code2 = HttpStatusCode::BadRequest;
+$code3 = HttpStatusCode::Ok;
+
+dump($code1 === $code2); // false
+dump($code1 === $code3); // true
