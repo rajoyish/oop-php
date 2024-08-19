@@ -1,36 +1,9 @@
 <?php
 
-use App\enums\HttpStatusCode;
+use App\Http\HttpStatusCode;
+use App\Http\Response;
 
 require_once 'vendor/autoload.php';
 
-class Response
-{
-    public const HTTP_OK = 200;
-
-    public function __construct(
-        private string $content,
-        private HttpStatusCode $statusCode,
-        private array $headers,
-    ) {}
-
-    public function getStatusCodeValue(): int
-    {
-        return $this->statusCode->value;
-    }
-}
-
-//$cases = HttpStatusCode::cases();
-//dump($cases);
-//
-//$code1 = HttpStatusCode::Ok;
-//$code2 = HttpStatusCode::BadRequest;
-//$code3 = HttpStatusCode::Ok;
-//
-//dump($code1 === $code2); // false
-//dump($code1 === $code3); // true
-
-//$code = HttpStatusCode::from(201);
-//$code = HttpStatusCode::from(222);
-$code = HttpStatusCode::tryFrom(222); // null
-dump($code, gettype($code));
+$response = new Response('some content', HttpStatusCode::Forbidden, []);
+dump($response->getStatusCodeValue()); // 403
