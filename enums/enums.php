@@ -6,4 +6,8 @@ use App\Http\Response;
 require_once 'vendor/autoload.php';
 
 $response = new Response('some content', HttpStatusCode::Forbidden, []);
-dump($response->getStatusCodeValue()); // 403
+
+$serializeResponse = serialize($response);
+$unSerialized = unserialize($serializeResponse);
+
+dump($serializeResponse, $unSerialized);
