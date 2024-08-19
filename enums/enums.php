@@ -1,5 +1,7 @@
 <?php
 
+use App\enums\HttpStatusCode;
+
 require_once 'vendor/autoload.php';
 
 class Response
@@ -8,10 +10,17 @@ class Response
 
     public function __construct(
         private string $content,
-        private int $statusCode,
+        private HttpStatusCode $statusCode,
         private array $headers,
     ) {}
+
+    public function getStatusCodeValue(): int
+    {
+        return $this->statusCode->value;
+    }
 }
 
-$response = new Response('Some content', Response::HTTP_OK, []);
+$response = new Response('Some content', HttpStatusCode::Ok, []);
 dump($response);
+
+echo $response->getStatusCodeValue().PHP_EOL;
